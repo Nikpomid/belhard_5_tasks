@@ -21,10 +21,19 @@
 
 
 def insertion_sort(array: list) -> list:
-    pass
+    for i in range(len(array) - 1):
+        position = i
+        sort = i + 1
+        while sort < len(array):
+            if array[sort] < array[position]:
+                position = sort
+            sort = sort + 1
+        array[i], array[position] = array[position], array[i]
+    return array
 
 
 if __name__ == '__main__':
     assert insertion_sort([2, 1, 5, 4, 7]) == [1, 2, 4, 5, 7]
     assert insertion_sort([2, -5, -3, 3, 1, 2]) == [-5, -3, 1, 2, 2, 3]
     print('Решено!')
+
