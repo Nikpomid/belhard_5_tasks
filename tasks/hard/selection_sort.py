@@ -18,9 +18,22 @@
 """
 
 
-def selection_sort(array: list) -> list:
-    return array
+def findSmallest(array: list) -> list:
+    smallest = array[0]
+    smallest_index = 0
+    for i in range(1, len(array)):
+        if array[i] < smallest:
+            smallest = array[i]
+            smallest_index = i
+    return smallest_index
 
+
+def selection_sort(array: list) -> list:
+    new_arr = []
+    for i in range(len(array)):
+        smallest = findSmallest(array)
+        new_arr.append(array.pop(smallest))
+    return new_arr
 
 if __name__ == '__main__':
     assert selection_sort([2, 1, 5, 4, 7]) == [1, 2, 4, 5, 7]

@@ -26,7 +26,13 @@
 
 
 def fibonacci(n: int) -> int:
-    return None
+    if n == 1 or n == 2:
+        return n - 1
+    first = 0
+    second = 1
+    for i in range(n - 1):
+        first, second = second, second + first
+    return second
 
 
 if __name__ == '__main__':

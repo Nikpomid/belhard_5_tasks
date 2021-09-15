@@ -21,7 +21,15 @@
 
 
 def insertion_sort(array: list) -> list:
-    pass
+    for i in range(len(array) - 1):
+        position = i
+        sort = i + 1
+        while sort < len(array):
+            if array[sort] < array[position]:
+                position = sort
+            sort = sort + 1
+        array[i], array[position] = array[position], array[i]
+    return array
 
 
 if __name__ == '__main__':

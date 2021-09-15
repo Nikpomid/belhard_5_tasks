@@ -10,10 +10,15 @@ is_pow_2(1024) -> True
 is_pow_2(13) -> False
 is_pow_2(17) -> False
 """
+from math import log
 
 
 def is_pow_2(number) -> bool:
-    return None
+    x = log(number, 2)
+    if x == int(x):
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
